@@ -1,8 +1,7 @@
 class Conta {
-    constructor(agencia, numero, tipoConta, saldo) {
+    constructor(agencia, numero, saldo) {
         this.agencia = agencia;
         this.numero = numero;
-        this.tipoConta = tipoConta;
         this.saldo = saldo;
         this.saldoInicial = this.saldo;
         this.historicoDeDepositos = [];
@@ -20,18 +19,7 @@ class Conta {
     }
 
     extrato() {
-        console.log(`Saldo: R$ ` + this.saldoInicial.toFixed(2));
-        console.log('Depositos');
-        this.historicoDeDepositos.forEach((valor, indice) => {
-            console.log(`${indice + 1}º deposito: R$ ${valor}`);
-        });
-        console.log('Saques');
-        this.historicoDeSaques.forEach((valor, indice) => {
-            console.log(`${indice + 1}º saque: R$ ${valor}`);
-        })
 
-
-        console.log(`Saldo Atual: ${this.saldo.toFixed(2)}`);
     }
 }
 

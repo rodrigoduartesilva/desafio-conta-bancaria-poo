@@ -1,12 +1,12 @@
-const Conta = require("./classes/Conta");
+const ContaCorrente = require('./classes/ContaCorrente.js');
 
-const conta = new Conta(1234, 445566, 'Corrente', 100);
+const contaCorrente = new ContaCorrente('0036', '005213', 100);
 
-console.log(conta);
+//console.log(contaCorrente);
 
-conta.depositar(50);
-conta.depositar(20);
-conta.sacar(25);
-conta.sacar(5);
+//contaCorrente.depositar(50);
+//contaCorrente.depositar(25);
 
-conta.extrato();
+//contaCorrente.sacar(10);
+
+contaCorrente.extrato();
