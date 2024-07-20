@@ -1,10 +1,11 @@
 const Conta = require("./Conta.js");
 
 class ContaCorrente extends Conta {
-    constructor(agencia, numero, saldo, saldoInicial, historicoDeDepositos, historicoDeSaques) {
-        super(agencia, numero, saldo, saldoInicial, historicoDeDepositos, historicoDeSaques);
+    constructor(titular, agencia, numero, saldo, saldoInicial, historicoDeDepositos, historicoDeSaques) {
+        super(titular, agencia, numero, saldo, saldoInicial, historicoDeDepositos, historicoDeSaques);
         this.jurosContaCorrente = 0.1;
         this.calcularJuros = this.jurosContaCorrente * this.saldo;
+        this.aplicaJuros();
     }
 
     aplicaJuros() {

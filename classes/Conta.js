@@ -1,5 +1,6 @@
 class Conta {
-    constructor(agencia, numero, saldo) {
+    constructor(titular, agencia, numero, saldo) {
+        this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
         this.saldo = saldo;
