@@ -1,5 +1,6 @@
 import { Conta } from "../classes/Conta.js";
 
+// Classe ContaCorrente que possibilita a criacao de uma conta corrente pelo usuario
 export class ContaCorrente extends Conta {
     constructor(titular, saldo) {
         super(titular, saldo);
@@ -8,6 +9,7 @@ export class ContaCorrente extends Conta {
         this.aplicaJuros();
     }
 
+    // Metodo que aplica uma taxa de juros
     aplicaJuros() {
         return this.saldo += this.calcularJuros;
     }

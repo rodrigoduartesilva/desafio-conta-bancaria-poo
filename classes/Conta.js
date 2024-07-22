@@ -1,3 +1,4 @@
+// Classe Conta, essa classe serve de modelo para as classes ContaCorrente e ContaPoupanca, onde estas herdarao seus atributos e metodos
 export class Conta {
     constructor(titular, saldo) {
         this.titular = titular;

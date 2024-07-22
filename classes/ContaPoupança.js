@@ -1,5 +1,6 @@
 import { Conta } from "../classes/Conta.js";
 
+// Classe ContaPoupanca que possibilita a criacao de uma conta poupanca pelo usuario
 export class ContaPoupanca extends Conta {
     constructor(titular, saldo) {
         super(titular, saldo);
@@ -8,6 +9,7 @@ export class ContaPoupanca extends Conta {
         this.aplicaRendimentos();
     }
 
+    // Metodo que aplica rendimentos a conta poupanca
     aplicaRendimentos() {
         return this.saldo += this.calcularRendimentos;
     }

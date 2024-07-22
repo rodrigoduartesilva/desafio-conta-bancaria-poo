@@ -1,17 +1,21 @@
+// Import da biblioteca do PromptSync, essa biblioteca possibilita a entrada de valores via teclado
 import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
 
+// Import da funções que imprime o menu e seleciona o tipo de transacao bancaria a ser realizada
 import { imprimirMenu } from './imprimirMenu.js';
 import { selecionarTransacoes } from './selecionarTransacoes.js';
 
+// Import das classes
 import { ContaPoupanca } from '../classes/ContaPoupança.js';
 import { ContaCorrente } from '../classes/ContaCorrente.js';
 
-
+// Funcao que cria uma conta de acordo com a opcao desejada pelo usuario
 export function criarConta(opcao) {
     let opcaoTransacaoBancaria;
     let titularConta;
 
+    // Opcao 1 cria uma conta-corrente
     if (opcao == 1) {
 
         console.log('Bem-vindo ao cadastro de Conta-Corrente do Banco Duarte Prime!');
@@ -22,6 +26,7 @@ export function criarConta(opcao) {
 
                 titularConta = prompt('Digite seu nome completo: ');
 
+                // Validacao do nome do titular conta onde é permitido apenas a insercao de letras
                 if (!/^[A-Za-z\s]+$/.test(titularConta)) {
                     throw new Error('Nome inválido: O nome não pode conter números.');
                 }
@@ -45,6 +50,7 @@ export function criarConta(opcao) {
 
         selecionarTransacoes(opcaoTransacaoBancaria, contaCorrente);
 
+        //opcao 2 cria uma conta-poupança
     } else if (opcao == 2) {
 
         console.log('Bem-vindo ao cadastro de Conta-Poupança do Banco Duarte Prime!');

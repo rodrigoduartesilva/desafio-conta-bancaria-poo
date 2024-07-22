@@ -1,3 +1,5 @@
+
+// Exibe o menu de opções onde o usuário poderá escolher entre alguns serviços bancarios
 export function imprimirMenu() {
 
     console.log('\n');

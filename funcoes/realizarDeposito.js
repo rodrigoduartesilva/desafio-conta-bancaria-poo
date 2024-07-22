@@ -1,6 +1,7 @@
 import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
 
+// Funcao que que possibilita o cliente realizar um deposito atraves da chamada do metodo .depositar herdado da classe Conta por suas filhas, ContaCorrente e ContaPoupanca
 export function realizarDeposito(conta) {
     let valor;
 

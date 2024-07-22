@@ -3,6 +3,7 @@ import { selecionarOpcoes } from './selecionarOpcoes.js';
 import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
 
+// Ecibicao do menu inicial
 export function exibirMenuInicio() {
 
     let opcao;

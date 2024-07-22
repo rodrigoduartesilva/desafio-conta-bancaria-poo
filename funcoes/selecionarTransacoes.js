@@ -4,6 +4,7 @@ const prompt = PromptSync();
 import { realizarDeposito } from './realizarDeposito.js';
 import { realizarSaque } from './realizarSaque.js';
 
+// Funcao que possibilita a realizacao das transacoes bancarias
 export function selecionarTransacoes(opcaoTransacaoBancaria, conta) {
     let validarSaidaWhile = true;
 
