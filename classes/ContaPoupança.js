@@ -1,8 +1,8 @@
-const Conta = require("./Conta.js");
+import { Conta } from "../classes/Conta.js";
 
-class ContaPoupanca extends Conta {
-    constructor(titular, agencia, numero, saldo, saldoInicial, historicoDeDepositos, historicoDeSaques) {
-        super(titular, agencia, numero, saldo, saldoInicial, historicoDeDepositos, historicoDeSaques);
+export class ContaPoupanca extends Conta {
+    constructor(titular, saldo) {
+        super(titular, saldo);
         this.redimentosContaPoupanca = 0.15;
         this.calcularRendimentos = this.redimentosContaPoupanca * this.saldo;
         this.aplicaRendimentos();
@@ -51,5 +51,3 @@ class ContaPoupanca extends Conta {
         console.log('****************************************************');
     }
 }
-
-module.exports = ContaPoupanca;

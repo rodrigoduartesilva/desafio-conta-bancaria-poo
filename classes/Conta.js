@@ -1,8 +1,8 @@
-class Conta {
-    constructor(titular, agencia, numero, saldo) {
+export class Conta {
+    constructor(titular, saldo) {
         this.titular = titular;
-        this.agencia = agencia;
-        this.numero = numero;
+        this.agencia = Math.floor(1000 + Math.random() * 9000).toString();;
+        this.numero = Math.floor(100000 + Math.random() * 900000).toString();
         this.saldo = saldo;
         this.saldoInicial = this.saldo;
         this.historicoDeDepositos = [];
@@ -23,5 +23,3 @@ class Conta {
 
     }
 }
-
-module.exports = Conta;
