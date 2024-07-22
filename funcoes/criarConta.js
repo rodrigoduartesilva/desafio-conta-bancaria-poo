@@ -10,12 +10,32 @@ import { ContaCorrente } from '../classes/ContaCorrente.js';
 
 export function criarConta(opcao) {
     let opcaoTransacaoBancaria;
+    let titularConta;
 
     if (opcao == 1) {
 
         console.log('Bem-vindo ao cadastro de Conta-Corrente do Banco Duarte Prime!');
 
-        const titularConta = prompt('Digite seu nome completo: ');
+        while (true) {
+
+            try {
+
+                titularConta = prompt('Digite seu nome completo: ');
+
+                if (!/^[A-Za-z\s]+$/.test(titularConta)) {
+                    throw new Error('Nome inválido: O nome não pode conter números.');
+                }
+
+                break;
+
+            } catch (error) {
+
+                console.error(error.message);
+
+            }
+
+        }
+
         const primeiroDeposito = +prompt('Informe o valor do primeiro deposito de sua conta: R$ ');
         const contaCorrente = new ContaCorrente(titularConta, primeiroDeposito);
 
@@ -29,9 +49,28 @@ export function criarConta(opcao) {
 
         console.log('Bem-vindo ao cadastro de Conta-Poupança do Banco Duarte Prime!');
 
-        const titularContaPoupanca = prompt('Digite seu nome completo: ');
+        while (true) {
+
+            try {
+
+                titularConta = prompt('Digite seu nome completo: ');
+
+                if (!/^[A-Za-z\s]+$/.test(titularConta)) {
+                    throw new Error('Nome inválido: O nome não pode conter números.');
+                }
+
+                break;
+
+            } catch (error) {
+
+                console.error(error.message);
+
+            }
+
+        }
+
         const primeiroDepositoPoupanca = +prompt('Informe o valor do primeiro deposito de sua conta poupança: R$ ');
-        const contaPoupanca = new ContaPoupanca(titularContaPoupanca, primeiroDepositoPoupanca);
+        const contaPoupanca = new ContaPoupanca(titularConta, primeiroDepositoPoupanca);
 
         imprimirMenu();
 

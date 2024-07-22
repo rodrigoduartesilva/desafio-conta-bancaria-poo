@@ -15,6 +15,8 @@ export class ContaCorrente extends Conta {
     extrato() {
         console.log('************** Extrato Conta Corrente **************');
         console.log('\n');
+        console.log(`Cliente: ${this.titular}`);
+        console.log('\n');
         console.log(`Saldo Inicial: R$ ` + this.saldoInicial.toFixed(2));
         console.log('\n');
         console.log(`Percentual de Juros aplicado: ${this.jurosContaCorrente * 100}%`);
