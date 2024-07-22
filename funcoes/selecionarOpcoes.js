@@ -1,16 +1,13 @@
 import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
 
-import { realizarDeposito } from './realizarDeposito.js';
-import { realizarSaque } from './realizarSaque.js';
 import { imprimirMenu } from './imprimirMenu.js';
+import { selecionarTransacoes } from './selecionarTransacoes.js';
 
-import { ContaCorrente } from '../classes/ContaCorrente.js';
 import { ContaPoupanca } from '../classes/ContaPoupança.js';
+import { ContaCorrente } from '../classes/ContaCorrente.js';
 
 let opcaoTransacaoBancaria;
-let validarSaidaWhile = true;
-
 
 export function selecionarOpcoes(opcao) {
     switch (opcao) {
@@ -25,40 +22,7 @@ export function selecionarOpcoes(opcao) {
 
             opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
 
-            while (validarSaidaWhile) {
-                switch (opcaoTransacaoBancaria) {
-                    case 1:
-
-                        realizarDeposito(contaCorrente);
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                    case 2:
-
-                        realizarSaque(contaCorrente);
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                    case 3:
-
-                        contaCorrente.extrato();
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                    case 4:
-
-                        console.log('Aplicação finalizada!');
-                        validarSaidaWhile = false;
-                        break;
-
-                    default:
-
-                        console.log('Opção inválida!');
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                }
-            }
+            selecionarTransacoes(opcaoTransacaoBancaria, contaCorrente);
 
             break;
 
@@ -73,40 +37,7 @@ export function selecionarOpcoes(opcao) {
 
             opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
 
-            while (validarSaidaWhile) {
-                switch (opcaoTransacaoBancaria) {
-                    case 1:
-
-                        realizarDeposito(contaPoupanca);
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                    case 2:
-
-                        realizarSaque(contaPoupanca);
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                    case 3:
-
-                        contaPoupanca.extrato();
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                    case 4:
-
-                        console.log('Aplicação finalizada!');
-                        validarSaidaWhile = false;
-                        break;
-
-                    default:
-
-                        console.log('Opção inválida!');
-                        opcaoTransacaoBancaria = +prompt('Selecione uma das opções listadas no menu acima: ');
-                        break;
-
-                }
-            }
+            selecionarTransacoes(opcaoTransacaoBancaria, contaPoupanca);
 
             break;
 
